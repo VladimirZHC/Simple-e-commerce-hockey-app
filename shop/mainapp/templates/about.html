@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #white;">
+  <a class="navbar-brand" href="{% url 'base' %}">ХОКК</a>
+
+  <ul class="navbar-nav">
+	<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Каталог
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="Sticks.html">Клюшки</a>
+        <a class="dropdown-item" href="#">Коньки</a>
+      </div>
+    <li class="nav-item">
+      <a class="nav-link" href="Contacts.html">Контакты</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">О нас</a>
+    </li>
+    </li>
+  </ul>
+</nav>
+<br>
+{% block content %}
+<div class = "container-fluid">
+	<div class = "block">
+		<div class = "row">
+			<article> 
+			<h1>Интернет магазин ХОКК </h1>
+			<p> Более 10 лет ХОКК помогает профессиональным игрокам, командам и любителям спорта выбирать спортивную экипировку для хоккея, флорбола, сквоша и бега. У нас развитая оптовая и розничная сеть
+			</p>
+			<p> На российском рынке мы представляем продукцию ведущих мировых брендов — производителей хоккейной экипировки: </p>
+			
+			<ul>
+			<li><a href = "https://ccm.ru"> CCM </a></li>
+			<li><a href = "https://easton.ru"> Easton </a> </li>
+			<li><a href = "https://mybauer.ru"> Bauer  </a></li>
+			<li><a href = "https://Warrior.ru"> Warrior </a></li>
+			</ul>
+			
+			<p>В нашем магазине Вы сможете приобрести любые товары для игры в хоккей, а если чего-то нет в наличии, наши специалисты предложат на выбор альтернативную продукцию. К Вашим услугам огромный ассортимент и профессиональные консультации.
+			</p>
+				<center>
+			<p> <img src="{% static 'img/about.jpg' %}" align="middle"> </p>
+				</center>
+			</article>
+		</div>
+</div>
+
+<h2> Мы находимся здесь </h2>
+<center>
+	<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad339d17736665d378a8630066400f2a5ce27633ef116799b1054de934868fef8&amp;width=650&amp;height=550&amp;lang=ru_RU&amp;scroll=true"></script>
+</center>
+<br>
+{% endblock content %}

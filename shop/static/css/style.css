@@ -1,0 +1,152 @@
+body {
+	background-color: white;
+	width:100%;
+
+
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.card{
+    font-family: "Roboto", "Arial", sans-serif;
+}
+
+.wrapper-header {
+    width: 100%;
+    background-color: #d0112b;
+    color: #fff;
+    position: relative;
+}
+.wrapper-header .wrap-header {
+    position: relative;
+    z-index: 104;
+    background-color: #d0112b;
+}
+
+
+.navbar {
+    background-color: #333; /* Dark background color */
+	overflow: visible;
+	background-color: white;
+	transition: top 0.3s;
+	height:48px;
+	top: 0px;
+	width: 100%
+}
+nav.navbar .dropdown:hover > .dropdown-menu {
+ display: block;
+}
+
+
+.navbar a {
+    display: block;
+	font-size: 18px;
+    text-align: justify;
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: black; /* Black text color */
+}
+
+
+.btn-danger {
+border: 1px;
+background-color: #e00027;
+}
+.btn-danger:hover{
+	background-color:red;
+}
+
+#opisanie {
+	color: #707070;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 16px;
+}
+
+.price {
+   font-size: 18px;
+   color: black;
+   display: block;
+   margin-bottom: 12px;
+}
+.container {
+  
+  margin: 0 auto;
+  padding: 15px;
+
+}
+
+.lvl1{
+float:left;
+}
+.lvl2{
+float:right;
+}
+#carouselmain .carousel-item {
+    height: 100%;
+	width: 100%;
+}
+.row {
+margin-top: 7px;
+}
+.container{
+	margin-top: 15px;
+}
+.btn-toolbar .btn{
+    margin-right: 5px;
+}
+
+#map-container{
+    height: 500px;
+    width: 500px;
+}
+footer{background:#e00027;} /*фон подвала */
+.social-icons ul{
+list-style: none;
+display: flex;
+justify-content: center;
+}
+.social-icons ul li a span {
+color: #000;
+width: 34px;
+background: #fff;
+height: 34px;
+text-align: center;
+line-height: 34px;
+border-radius: 20px;
+font-size: 13px;
+margin: 0px 2px;
+border-radius: 20px;
+font-size: 14px;
+margin: 0px 2px;
+transition: 0.5s all;
+-webkit-transition: 0.5s all;
+transition: 0.5s all;
+-moz-transition: 0.5s all;
+}
+.social-icons ul li a span:hover{color:#0ccbf1;}
+.copy-bottom-txt p{font-size:18px;
+color:#fff;
+}
+.social-icons ul li:nth-child(2){
+margin: 0 10px;
+}
+.copy-bottom-txt p a {
+font-size: 18px;
+color:#000;
+letter-spacing: 1px;
+transition: .4s;
+}
+.copy-bottom-txt p a:hover {
+color: #000;
+text-decoration: underline;
+padding-top: 4px;
+font-weight: 700;
+}

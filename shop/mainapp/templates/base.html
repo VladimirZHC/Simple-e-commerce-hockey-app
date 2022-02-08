@@ -1,0 +1,100 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Хокк - магазин качественных товаров</title>
+        <!-- Favicon-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+<nav class="navbar  navbar-expand-sm navbar-light" style="background-color: white;">
+
+  <a class="navbar-brand" href="{% url 'index' %}">ХОКК</a>
+
+  <ul class="navbar-nav " >
+	<li class="nav-item">
+      <a class="nav-link" href=" {% url 'base' %}">Каталог</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'about' %}">О нас</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav navbar-expand-sm navbar-light  ml-auto ">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'cart' %}">Корзина <span class="badge badge-pill badge-danger">{{ cart.products.count }}</span> </a>
+    </li>
+  {% if not request.user.is_authenticated %}
+      <li class="nav-item">
+          <a class="nav-link " href="{% url 'login' %}">Авторизация</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link " href="{% url 'registration' %}">Регистрация</a>
+      </li>
+  {% endif %}
+      <li class="nav-item">
+          {% if request.user.is_authenticated %}
+          <span class="navbar navbar-expand-sm navbar-light ">Привет,  <span class="badge badge-danger">
+              <a style="text-decoration: none; font-size: 14px; color: white; " href="{% url 'profile' %}">{{ request.user.username }}</a>
+          </span>  <a href="{% url 'logout' %}" style='color:black  ; text-decoration: none;'> |Выйти</a></span>
+          {% endif %}
+      </li>
+  </ul>
+</nav>
+
+
+
+        <img class="img-fluid" src="{% static 'img/header.jpg' %} " alt="Картинка">
+        <div class="container">
+            {% block content %}
+            <div class="row mt-5 ">
+                    <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <a href=" {{ product.get_absolute_url }}"><img class="card-img-top image-fluid" src="{{ product.image.url }}" alt="..." /></a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h4>
+                                    <h5>{{ product.price }} руб</h5>
+                                    <a href="{% url 'add_to_cart' slug=product.slug %}">
+                                        <button class="btn btn-danger">Добавить в корзину</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+        </div>
+
+<footer class="py-3">
+<div class="copy-bottom-txt text-center py-3">
+<p>
+© 2021 Хокк. Все права защищены | Design by <a href="https://vk.com/id450085286" target="_blank">Denis Turaev</a>
+</p>
+</div>
+<div class="social-icons mt-lg-3 mt-2 text-center">
+<ul>
+<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+<li><a href="#"><span class="fa fa-rss"></span></a></li>
+</ul>
+</div>
+</footer>
+<!-- CDN подключение иконок fontawesome -->
+<script src="https://use.fontawesome.com/df966d76e1.js"></script>
+<!-- Bootstrap core JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+        </body>
+</html>
